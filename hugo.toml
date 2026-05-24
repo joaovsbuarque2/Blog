@@ -1,0 +1,65 @@
+baseURL = "https://seudominio.com"
+locale = "pt-br"
+title = "Meu Blog"
+theme = "loficode"
+
+enableEmoji = true
+
+[outputs]
+  home = ["HTML", "JSON", "pages"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+  [outputFormats.pages]
+    mediaType = "application/json"
+    baseName = "pages"
+    isPlainText = true
+
+[pagination]
+  pagerSize = 6
+  path = "page"
+
+[params]
+  description = "Um blog aconchegante"
+  tagline = "Coding with coffee and lo-fi beats"
+
+  [params.author]
+    name = "João Buarque"
+    image = "images/profile.png"
+
+  [params.social]
+    github = "joao-buarque"
+    # twitter = "https://twitter.com/example"
+    # linkedin = "https://linkedin.com/in/example"
+    # email = "contact@example.com"
+    # mastodon = "https://mastodon.social/@example"
+    # youtube = "https://youtube.com/@example"
+    # instagram = "https://instagram.com/example"
+    # facebook = "https://facebook.com/example"
+
+[[menu.main]]
+  name = "Sobre"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  name = "Contato"
+  url = "/contact/"
+  weight = 20
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+    lineNumbersInTable = false
+    tabWidth = 2
+    noClasses = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
