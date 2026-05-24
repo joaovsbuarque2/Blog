@@ -30,6 +30,7 @@ Este site utiliza **GitHub Actions** para build e deploy automatizado no GitHub 
 Para organizar melhor as ideias, utilizo as seguintes categorias principais, com tags relacionadas:
 
 ### 💰 Finanças
+
 - Empreendedorismo
 - Economia
 - Investimento
@@ -38,6 +39,7 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 - E outros temas financeiros
 
 ### 💻 Tecnologia
+
 - Programação
 - IA (Inteligência Artificial)
 - Linux
@@ -47,12 +49,13 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 - E outros tópicos tech
 
 ### 👔 Carreira
-- Vigilante (segurança?)
+
 - Trabalho
 - Jornada Dev
 - E temas relacionados à carreira profissional
 
 ### 🎬 Cultura Pop
+
 - Games
 - Filmes
 - Séries
@@ -62,6 +65,7 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 - E entretenimento pop
 
 ### 🏠 Cotidiano
+
 - Futebol
 - Política
 - Família
@@ -72,11 +76,10 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 
 Essas categorias e tags ajudam a navegar pelas reflexões e ideias registradas ao longo dos anos.
 
-
 ## 📜 Licença
 
 Este projeto é pessoal e não possui uma licença específica. Use por sua conta e risco. 😊
 
 ---
 
-*Cultivando ideias, uma de cada vez.* 🌿
+_Cultivando ideias, uma de cada vez._ 🌿
