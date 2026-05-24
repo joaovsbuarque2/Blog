@@ -1,21 +1,15 @@
 # 🌱 Blog
 
-Bem-vindo ao meu **Jardim de Ideias**! Este é um espaço pessoal onde registro pensamentos, ideias e reflexões sobre tecnologia, carreira e vida. Construído com [Hugo](https://gohugo.io/) usando o tema [LoveIt](https://github.com/dillonzq/LoveIt).
+Bem-vindo ao meu **Blog**! Um espaço para compartilhar ideias sobre tecnologia, carreira e vida. Construído com [Hugo](https://gohugo.io/) usando o tema [LofiCode](https://github.com/meimakes/loficode-hugo-theme).
 
 ## 🚀 Deploy Automatizado
 
 Este site utiliza **GitHub Actions** para build e deploy automatizado no GitHub Pages. O workflow está configurado em `.github/workflows/hugo.yml`.
 
-### 🎯 Objetivos
-- **Capturar Ideias**: Registrar pensamentos e reflexões do dia a dia
-- **Compartilhar Conhecimento**: Posts sobre desenvolvimento de software e tecnologia
-- **Currículo Profissional**: Apresentar minha experiência como desenvolvedor
-- **Networking**: Conectar através das redes sociais
-
 ## 🛠️ Tecnologias
 
 - **Hugo** - Gerador de sites estáticos
-- **LoveIt Theme** - Tema limpo e elegante
+- **LofiCode Theme** - Tema aconchegante lo-fi
 - **GitHub Pages** - Hospedagem
 - **GitHub Actions** - CI/CD automatizado
 
