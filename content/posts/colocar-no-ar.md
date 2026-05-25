@@ -1,11 +1,9 @@
-+++
-title = 'Colocar no ar também é parte do processo'
-date = 2026-01-20T21:30:00-03:00
-draft = false
-author = 'João Buarque'
-categories = ['projetos', 'carreira']
-tags = ['hugo', 'github-pages', 'aprendizado', 'processo']
-+++
+---
+title: 'Colocar no ar também é parte do processo'
+date: 2026-01-20T21:30:00-03:00
+categories: ['projetos']
+tags: ['aprendizado']
+---
 
 Hoje eu consegui subir mais um site no ar usando GitHub Pages.
 

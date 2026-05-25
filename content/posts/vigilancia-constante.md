@@ -1,10 +1,8 @@
-+++
-title = 'Vigilância constante não é sinônimo de cuidado'
-date = 2026-01-23T05:10:00-03:00
-draft = false
-categories = ['trabalho', 'cotidiano']
-tags = ['vigilância', 'cftv', 'trabalho', 'reflexão']
-+++
+---
+title: 'Vigilância constante não é sinônimo de cuidado'
+date: 2026-01-23T05:10:00-03:00
+tags: ['CFTV', 'trabalho']
+---
 
 Existe uma diferença grande entre trabalhar com vigilância e viver sob vigilância.
 
