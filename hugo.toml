@@ -33,7 +33,7 @@ enableEmoji = true
     image = "images/profile.png"
 
   [params.social]
-    github = "joao-buarque"
+    github = "https://github.com/joaovsbuarque2"
     # twitter = "https://twitter.com/example"
     # linkedin = "https://linkedin.com/in/example"
     # email = "contact@example.com"

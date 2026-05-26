@@ -10,3 +10,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Audio (large files)
+static/audio/*.mp3
