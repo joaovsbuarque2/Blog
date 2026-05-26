@@ -958,6 +958,40 @@
               </div>
             </article>
           </div>
+
+          <div class="ambient-bar">
+            <div class="ambient-controls">
+              <button class="mute-toggle muted" title="Toggle ambient sounds">
+                <i class="fas fa-volume-mute"></i>
+              </button>
+              <button class="ambient-icon" data-sound="lofi-hiphop" title="Lo-fi Hip Hop">
+                <i class="fas fa-headphones"></i>
+              </button>
+              <button class="ambient-icon" data-sound="jazz" title="Jazz Vibes">
+                <i class="fas fa-coffee"></i>
+              </button>
+              <button class="ambient-icon" data-sound="ghibli" title="Studio Ghibli Soundtrack">
+                <i class="fas fa-feather"></i>
+              </button>
+              <button class="ambient-icon" data-sound="rain" title="Gentle Rain">
+                <i class="fas fa-cloud-rain"></i>
+              </button>
+            </div>
+            <div class="ambient-label">Click to start ambient sounds</div>
+            <div class="volume-container">
+              <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.3">
+              <div class="equalizer muted">
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+              </div>
+            </div>
+          </div>
         </div>
       `;
 
@@ -1170,6 +1204,39 @@
             </aside>
           </div>
 
+          <div class="ambient-bar">
+            <div class="ambient-controls">
+              <button class="mute-toggle muted" title="Toggle ambient sounds">
+                <i class="fas fa-volume-mute"></i>
+              </button>
+              <button class="ambient-icon" data-sound="lofi-hiphop" title="Lo-fi Hip Hop">
+                <i class="fas fa-headphones"></i>
+              </button>
+              <button class="ambient-icon" data-sound="jazz" title="Jazz Vibes">
+                <i class="fas fa-coffee"></i>
+              </button>
+              <button class="ambient-icon" data-sound="ghibli" title="Studio Ghibli Soundtrack">
+                <i class="fas fa-feather"></i>
+              </button>
+              <button class="ambient-icon" data-sound="rain" title="Gentle Rain">
+                <i class="fas fa-cloud-rain"></i>
+              </button>
+            </div>
+            <div class="ambient-label">Click to start ambient sounds</div>
+            <div class="volume-container">
+              <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.3">
+              <div class="equalizer muted">
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+                <div class="equalizer-bar"></div>
+              </div>
+            </div>
+          </div>
         </div>
       `;
 
