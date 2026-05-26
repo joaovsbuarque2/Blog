@@ -3,6 +3,10 @@
 (function () {
   "use strict";
 
+  // Normalize base path for subdirectory deployments
+  var __basePath = window.__basePath || '/';
+  if (!__basePath.endsWith('/')) __basePath += '/';
+
   // Set theme to dark only
   document.documentElement.setAttribute("data-theme", "dark");
 
@@ -418,7 +422,7 @@
     } else {
       // If we're on other pages, try to fetch the homepage to get post data
       try {
-        const response = await fetch("/");
+        const response = await fetch(__basePath);
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, "text/html");
@@ -547,9 +551,15 @@
     // Close search first
     toggleSearch();
 
+    // Normalize URL - handle both absolute and relative URLs
+    var path = url;
+    if (path.startsWith('http')) {
+      try { path = new URL(path).pathname; } catch(e) { path = url; }
+    }
+
     // Use SPA navigation if available
-    if (window.spa && url.startsWith("/posts/")) {
-      const slug = url.split("/posts/")[1].replace("/", "");
+    if (window.spa && path.startsWith(__basePath + 'posts/')) {
+      var slug = path.split(__basePath + 'posts/')[1].replace("/", "");
       window.spa.showPost(slug, true);
     } else {
       // Fallback to regular navigation
@@ -703,7 +713,7 @@
     detectPageType() {
       // Check if we're on a real post page by looking for post content structure
       const postContent = document.querySelector('.post-layout .post-content .post-body');
-      const isPostURL = window.location.pathname.startsWith('/posts/');
+      const isPostURL = window.location.pathname.startsWith(__basePath + 'posts/');
 
       this.isRealPostPage = isPostURL && postContent;
 
@@ -715,7 +725,7 @@
 
     async loadPostsData() {
       try {
-        const response = await fetch("/index.json");
+        const response = await fetch(__basePath + "index.json");
         if (response.ok) {
           this.postsData = await response.json();
           console.log(
@@ -733,9 +743,15 @@
 
     async loadPagesData() {
       try {
-        const response = await fetch("/pages.json");
+        const response = await fetch(__basePath + "pages.json");
         if (response.ok) {
           this.pagesData = await response.json();
+          // Normalize page URLs to pathnames for consistent comparison
+          this.pagesData.forEach(function(p) {
+            if (p.url && p.url.startsWith('http')) {
+              try { p.url = new URL(p.url).pathname; } catch(e) {}
+            }
+          });
           console.log(
             "📄 Loaded",
             this.pagesData.length,
@@ -778,7 +794,7 @@
           console.log("🔗 Link clicked:", href, "Link element:", link);
 
           // Check if it's a post link
-          if (href.startsWith("/posts/")) {
+          if (href.startsWith(__basePath + "posts/")) {
             console.log("📝 Intercepting post link:", href);
             e.preventDefault();
             this.navigateToPost(href);
@@ -871,7 +887,7 @@
 
       // Navigate to home when clicked
       backButton.addEventListener('click', () => {
-        window.location.href = '/';
+        window.location.href = __basePath;
       });
 
       document.body.appendChild(backButton);
@@ -881,8 +897,8 @@
       // Only handle SPA routing if we're not on a real post page
       if (!this.isRealPostPage) {
         const path = window.location.pathname;
-        if (path.startsWith("/posts/")) {
-          const slug = path.split("/posts/")[1].replace("/", "");
+        if (path.startsWith(__basePath + "posts/")) {
+          const slug = path.split(__basePath + "posts/")[1].replace("/", "");
           if (slug) {
             this.showPost(slug, false);
           }
@@ -891,12 +907,12 @@
     }
 
     navigateToPost(href) {
-      const slug = href.split("/posts/")[1].replace("/", "");
+      const slug = href.split(__basePath + "posts/")[1].replace("/", "");
       this.showPost(slug, true);
     }
 
     navigateToPage(href) {
-      // Extract page slug from URL (e.g., "/about/" -> "about")
+      // Extract page slug from URL (e.g., "/Blog/about/" -> "Blog/about")
       const slug = href.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
       this.showPage(slug, true);
     }
@@ -924,7 +940,7 @@
 
       // Update URL if needed
       if (updateHistory) {
-        const newUrl = `/${slug}/`;
+        const newUrl = __basePath + slug + '/';
         history.pushState({ type: "page", slug }, page.title, newUrl);
       }
 
@@ -953,7 +969,7 @@
         <div class="post-overlay-content">
           <div class="post-overlay-header">
             <div class="post-overlay-title">
-              <a href="/" class="overlay-site-title">${siteTitle}</a>
+              <a href="${__basePath}" class="overlay-site-title">${siteTitle}</a>
             </div>
             <button class="post-overlay-close" aria-label="Close page">
               <i class="fas fa-times"></i>
@@ -1039,7 +1055,7 @@
 
       // Update URL if needed
       if (updateHistory) {
-        const newUrl = `/posts/${slug}/`;
+        const newUrl = __basePath + 'posts/' + slug + '/';
         history.pushState({ type: "post", slug }, post.title, newUrl);
       }
 
@@ -1072,7 +1088,7 @@
         <div class="post-overlay-content">
           <div class="post-overlay-header">
             <div class="post-overlay-title">
-              <a href="/" class="overlay-site-title">${siteTitle}</a>
+              <a href="${__basePath}" class="overlay-site-title">${siteTitle}</a>
             </div>
             <button class="post-overlay-close" aria-label="Close post">
               <i class="fas fa-times"></i>
@@ -1101,7 +1117,7 @@
                     ? `
                   <div class="post-tags-header">
                     ${post.tags
-                      .map((tag) => `<a href="/tags/${tag.toLowerCase().replace(/\s+/g, '-')}" class="post-tag">${tag}</a>`)
+                      .map((tag) => `<a href="${__basePath}tags/${tag.toLowerCase().replace(/\s+/g, '-')}" class="post-tag">${tag}</a>`)
                       .join("")}
                   </div>
                 `
@@ -1207,8 +1223,8 @@
         link.addEventListener("click", (e) => {
           e.preventDefault();
           const href = link.getAttribute("href");
-          if (href && href.startsWith("/posts/")) {
-            const slug = href.split("/posts/")[1].replace("/", "");
+          if (href && href.startsWith(__basePath + "posts/")) {
+            const slug = href.split(__basePath + "posts/")[1].replace("/", "");
             this.showPost(slug, true);
           }
         });
@@ -1499,7 +1515,7 @@
 
       // Update URL if needed
       if (updateHistory) {
-        history.pushState({ type: "home" }, "LofiCode", "/");
+        history.pushState({ type: "home" }, "LofiCode", __basePath);
       }
     }
   }
@@ -1535,7 +1551,7 @@
 
       try {
         // Fetch posts data from index.json
-        const response = await fetch('/index.json');
+        const response = await fetch(__basePath + 'index.json');
         const postsData = await response.json();
 
         // Get the next batch of posts

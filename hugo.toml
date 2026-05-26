@@ -1,4 +1,4 @@
-baseURL = "https://seudominio.com"
+baseURL = "https://joaovsbuarque2.github.io/Blog/"
 locale = "pt-br"
 title = "Meu Blog"
 theme = "loficode"
