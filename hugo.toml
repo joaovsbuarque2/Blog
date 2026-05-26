@@ -42,16 +42,6 @@ enableEmoji = true
     # instagram = "https://instagram.com/example"
     # facebook = "https://facebook.com/example"
 
-[[menu.main]]
-  name = "Sobre"
-  url = "/about/"
-  weight = 10
-
-[[menu.main]]
-  name = "Contato"
-  url = "/contact/"
-  weight = 20
-
 [markup]
   [markup.highlight]
     style = "dracula"
