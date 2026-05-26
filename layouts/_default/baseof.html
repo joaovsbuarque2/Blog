@@ -8,17 +8,13 @@
     <div class="reading-progress"></div>
     {{ end }}
 
-    {{ if not (eq .Type "posts") }}
     {{ partial "header.html" . }}
-    {{ end }}
 
     <main>
         {{ block "main" . }}{{ end }}
     </main>
 
-    {{ if not (eq .Type "posts") }}
     {{ partial "ambient-bar.html" . }}
-    {{ end }}
 
     <script src="{{ "js/main.js" | absLangURL }}"></script>
 </body>

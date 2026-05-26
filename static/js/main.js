@@ -757,11 +757,22 @@
           const link = e.target.closest("a");
           if (!link) return;
 
-          const href = link.getAttribute("href");
+          let href = link.getAttribute("href");
 
-          // Skip external links, anchors, and special keys
-          if (!href || href.startsWith("http") || href.startsWith("#") || e.ctrlKey || e.metaKey) {
+          // Skip empty, anchors, and special keys
+          if (!href || href.startsWith("#") || e.ctrlKey || e.metaKey) {
             return;
+          }
+
+          // Handle same-origin absolute URLs (e.g. from .Permalink in Hugo)
+          if (href.startsWith("http")) {
+            try {
+              const url = new URL(href);
+              if (url.origin !== window.location.origin) return;
+              href = url.pathname + url.search + url.hash;
+            } catch {
+              return;
+            }
           }
 
           console.log("🔗 Link clicked:", href, "Link element:", link);
