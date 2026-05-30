@@ -69,7 +69,7 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 - Futebol
 - Política
 - Família
-- Academia (exercícios)
+- Treino
 - E-sports
 - RPG de Mesa
 - E assuntos do dia a dia
