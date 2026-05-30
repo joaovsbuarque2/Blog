@@ -54,6 +54,9 @@
     jazz: { name: "Jazz Vibes", emoji: "🎷", videoId: "0q8lq8l8jAU" },
     ghibli: { name: "Studio Ghibli Soundtrack", emoji: "🎬", videoId: "eF3ffBDmf5E" },
     rain: { name: "Gentle Rain", emoji: "🌧️", videoId: "ASCMw-UCafA" },
+    cyberpunk: { name: "Cyberpunk 2077", emoji: "🌃", videoId: "SPc5m4yVPjo" },
+    bladerunner: { name: "Blade Runner", emoji: "🌆", videoId: "KGsJHYSzAKM" },
+    coding: { name: "Lo-fi Coding Beats", emoji: "💻", videoId: "cbuZfY2S2UQ" },
   };
 
   function loadYouTubeAPI() {
