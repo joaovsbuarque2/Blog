@@ -44,7 +44,7 @@ Para organizar melhor as ideias, utilizo as seguintes categorias principais, com
 - IA (Inteligência Artificial)
 - Linux
 - Terminal
-- Dev (Desenvolvimento)
+- Dev 
 - OpenSource
 - E outros tópicos tech
 
