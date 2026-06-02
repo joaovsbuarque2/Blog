@@ -1,7 +1,7 @@
 ---
 title: 'Vigilância constante não é sinônimo de cuidado'
 date: 2026-01-23T05:10:00-03:00
-tags: ['CFTV', 'trabalho']
+tags: ['trabalho']
 ---
 
 Existe uma diferença grande entre trabalhar com vigilância e viver sob vigilância.

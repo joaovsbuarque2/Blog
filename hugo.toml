@@ -43,6 +43,9 @@ enableEmoji = true
     # facebook = "https://facebook.com/example"
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     style = "dracula"
     lineNos = true
