@@ -1,0 +1,3 @@
+<video controls width="{{ .Get "width" | default "100%" }}" {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+  <source src="{{ .Get "src" | relURL }}" type="video/mp4">
+</video>
