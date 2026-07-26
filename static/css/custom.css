@@ -15,3 +15,7 @@
 .post-cover + .post-content {
     margin-top: 0.5rem;
 }
+
+.post-body img {
+    max-height: 500px;
+}
