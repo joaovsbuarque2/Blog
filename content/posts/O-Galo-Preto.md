@@ -2,7 +2,7 @@
 title: 'O Galo Preto'
 date: 2026-07-25T14:00:00-03:00
 draft: false
-tags: ['sonho']
+tags: ['sonho', conto]
 ---
 
 Ninguém soube explicar por que aquele museu existia. 

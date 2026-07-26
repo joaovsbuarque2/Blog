@@ -20,6 +20,11 @@ enableEmoji = true
     baseName = "pages"
     isPlainText = true
 
+[sitemap]
+  filename = "sitemap.xml"
+  changefreq = "monthly"
+  priority = 0.5
+
 [pagination]
   pagerSize = 6
   path = "page"
