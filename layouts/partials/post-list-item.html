@@ -1,5 +1,17 @@
+{{- $cover := "" }}
+{{- if .Params.cover }}
+  {{- $cover = .Params.cover | relURL }}
+{{- end }}
+
 <!-- Fixed post-list-item.html partial -->
 <article class="post-item{{ if .Params.featured }} featured{{ end }}">
+  {{- if $cover }}
+  <div class="post-cover">
+    <a href="{{ .Permalink }}">
+      <img src="{{ $cover }}" alt="{{ .Title }}" class="post-cover-image">
+    </a>
+  </div>
+  {{- end }}
   <div class="post-content">
     <div class="post-header-inline">
       <h2 class="post-title-vaporwave">
