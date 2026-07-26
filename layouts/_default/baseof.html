@@ -2,6 +2,7 @@
 <html lang="{{ .Site.LanguageCode }}" data-theme="dark">
 <head>
     {{ partial "head.html" . }}
+    <link rel="stylesheet" href="{{ "css/custom.css" | absLangURL }}">
 </head>
 <body>
     {{ if not .IsHome }}
