@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" data-theme="dark">
 <head>
-    {{ partial "head.html" . }}
-    <link rel="stylesheet" href="{{ "css/custom.css" | absLangURL }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Site fora do ar - {{ .Site.Title }}</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: #121212;
+            color: #f5f5f5;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+            text-align: center;
+        }
+        main {
+            max-width: 32rem;
+        }
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            letter-spacing: -0.02em;
+        }
+        p {
+            margin: 0.5rem 0;
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    {{ if not .IsHome }}
-    <div class="reading-progress"></div>
-    {{ end }}
-
-    {{ partial "header.html" . }}
-
     <main>
-        {{ block "main" . }}{{ end }}
+        <h1>Site fora do ar</h1>
+        <p>Este site foi temporariamente desativado.</p>
+        <p>Volte em breve.</p>
     </main>
-
-    {{ partial "ambient-bar.html" . }}
-
-    <script>var __basePath = '{{ "" | relURL }}';</script>
-    <script src="{{ "js/main.js" | absLangURL }}"></script>
 </body>
 </html>
